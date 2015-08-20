@@ -17,7 +17,7 @@ class Extension extends BaseExtension
         parent::__construct($app);
 
         //$this->config = $this->app['config'];
-        $this->app['config']->getFields()->addField(new FAIconPickerField());
+        $this->app['config']->getFields()->addField(new bootstrap-colorpicker());
 
         if ($this->app['config']->getWhichEnd() == 'backend') {
             $this->app['htmlsnippets'] = true;
@@ -26,8 +26,8 @@ class Extension extends BaseExtension
     }
 
     public function initialize() {
-        $this->addCSS('assets/css/fontawesome-iconpicker.min.css');
-        $this->addJavascript('assets/js/fontawesome-iconpicker.min.js', true);
+        $this->addCSS('assets/css/bootstrap-colorpicker.min.css');
+        $this->addJavascript('assets/js/bootstrap-colorpicker.min.js', true);
     }
 
     public function getName()
