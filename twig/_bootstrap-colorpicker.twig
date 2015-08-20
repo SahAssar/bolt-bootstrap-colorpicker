@@ -1,0 +1,31 @@
+{#=== Options ============================================================================#}
+
+{% set attr_opt = {
+class:              field.class|default(''),
+name_id:            key,
+required:           field.required|default(false),
+readonly:           field.readonly|default(false),
+type:               field.hidden ? 'hidden' : 'text',
+'data-format':      field.format|default('rgba'),
+'data-inline':      field.inline|default(true),
+'data-horizontal':  field.horizontal|default(false),
+'data-align':       field.align|default('left')
+}%}
+
+{#=== FIELDSET ============================================================================#}
+
+<fieldset class="bootstrap-colorpicker">
+    <div class="col-sm-12">
+        <div>
+            <label class="control-label">{{field.label|default(key)}}</label>
+        </div>
+        <input {{ macro.attr(attr_opt) }} value="{{ context.content.get(key)|default('fa-anchor') }}" />
+
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+                $('#{{ key }}').colorpicker();
+            })
+        </script>
+    </div>
+</fieldset>
