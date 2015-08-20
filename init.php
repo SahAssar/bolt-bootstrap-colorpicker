@@ -1,5 +1,5 @@
 <?php
 
-namespace Bolt\Extension\boltabandoned\bootstrap-colorpicker;
+namespace Bolt\Extension\boltabandoned\bootstrapcolorpicker;
 
 $app['extensions']->register(new Extension($app));

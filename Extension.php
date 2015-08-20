@@ -1,11 +1,11 @@
 <?php
 
-namespace Bolt\Extension\boltabandoned\bootstrap-colorpicker;
+namespace Bolt\Extension\boltabandoned\bootstrapcolorpicker;
 
 use Bolt\Application;
 use Bolt\BaseExtension;
 
-include_once 'bootstrap-colorpicker.php';
+include_once 'bootstrapcolorpicker.php';
 
 class Extension extends BaseExtension
 {
@@ -17,7 +17,7 @@ class Extension extends BaseExtension
         parent::__construct($app);
 
         //$this->config = $this->app['config'];
-        $this->app['config']->getFields()->addField(new bootstrap-colorpicker());
+        $this->app['config']->getFields()->addField(new bootstrapcolorpicker());
 
         if ($this->app['config']->getWhichEnd() == 'backend') {
             $this->app['htmlsnippets'] = true;
@@ -32,7 +32,7 @@ class Extension extends BaseExtension
 
     public function getName()
     {
-        return "faiconpicker";
+        return "bootstrapcolorpicker";
     }
 
 }

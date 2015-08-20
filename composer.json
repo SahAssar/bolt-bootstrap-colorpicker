@@ -1,5 +1,5 @@
 {
-    "name": "boltabandoned/bootstrap-colorpicker",
+    "name": "boltabandoned/bootstrapcolorpicker",
     "description": "A replacement for the colorpicker extension that no longer seems to work. Based on http://mjolnic.com/bootstrap-colorpicker/ and Raistlfiren/FAIconFieldType",
     "type": "bolt-extension",
     "require": {
@@ -23,7 +23,7 @@
             "init.php"
         ],
         "psr-4": {
-            "Bolt\\Extension\\boltabandoned\\bootstrap-colorpicker\\": ""
+            "Bolt\\Extension\\boltabandoned\\bootstrapcolorpicker\\": ""
         }
     },
     

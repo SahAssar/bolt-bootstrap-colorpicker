@@ -7,8 +7,8 @@ required:           field.required|default(false),
 readonly:           field.readonly|default(false),
 type:               field.hidden ? 'hidden' : 'text',
 'data-format':      field.format|default('rgba'),
-'data-inline':      field.inline|default(true),
-'data-horizontal':  field.horizontal|default(false),
+'data-inline':      field.inline ? 'true' : 'false',
+'data-horizontal':  field.horizontal ? 'true' : 'false',
 'data-align':       field.align|default('left')
 }%}
 
@@ -19,10 +19,9 @@ type:               field.hidden ? 'hidden' : 'text',
         <div>
             <label class="control-label">{{field.label|default(key)}}</label>
         </div>
-        <input {{ macro.attr(attr_opt) }} value="{{ context.content.get(key)|default('fa-anchor') }}" />
-
+        <input {{ macro.attr(attr_opt) }} data-container=".{{key}}container" value="{{ context.content.get(key)|default('rgba(0,0,0,1)') }}" />
+        <div class="{{key}}container"></div>
         <script type="text/javascript">
-
             $(document).ready(function() {
                 $('#{{ key }}').colorpicker();
             })

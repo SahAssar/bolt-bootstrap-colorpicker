@@ -1,14 +1,14 @@
 <?php
 
-namespace Bolt\Extension\boltabandoned\bootstrap-colorpicker;
+namespace Bolt\Extension\boltabandoned\bootstrapcolorpicker;
 
 use Bolt\Field\FieldInterface;
 
-class bootstrap-colorpicker implements FieldInterface {
+class bootstrapcolorpicker implements FieldInterface {
 
     public function getName()
     {
-        return 'bootstrap-colorpicker';
+        return 'bootstrapcolorpicker';
     }
 
     public function getTemplate()
