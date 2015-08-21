@@ -5,13 +5,13 @@ A replacement for the colorpicker extension that no longer seems to work. Based 
 
 Field Usage 
 
-	icon:
-  		type: colorpicker
+	color:
+  		type: bootstrapcolorpicker
 
 Supported options:
 
-	icon:
-  		type: colorpicker
+	color:
+  		type: bootstrapcolorpicker
   		format: inline
   		hidden: true
         horizontal: true

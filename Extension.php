@@ -16,7 +16,6 @@ class Extension extends BaseExtension
     {
         parent::__construct($app);
 
-        //$this->config = $this->app['config'];
         $this->app['config']->getFields()->addField(new bootstrapcolorpicker());
 
         if ($this->app['config']->getWhichEnd() == 'backend') {
@@ -26,8 +25,10 @@ class Extension extends BaseExtension
     }
 
     public function initialize() {
-        $this->addCSS('assets/css/bootstrap-colorpicker.min.css');
-        $this->addJavascript('assets/js/bootstrap-colorpicker.min.js', true);
+        if ($this->app['config']->getWhichEnd() == 'backend') {
+            $this->addCSS('assets/css/bootstrap-colorpicker.min.css');
+            $this->addJavascript('assets/js/bootstrap-colorpicker.min.js', true);
+        }
     }
 
     public function getName()
