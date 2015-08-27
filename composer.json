@@ -26,8 +26,8 @@
             "Bolt\\Extension\\boltabandoned\\bootstrapcolorpicker\\": ""
         }
     },
-    
     "extra": {
-        "bolt-assets": "assets"
+        "bolt-assets": "assets",
+        "bolt-icon": "assets/colorpicker-icon.png"
     }
 }
