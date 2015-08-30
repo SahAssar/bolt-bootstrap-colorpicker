@@ -23,7 +23,9 @@ type:               field.hidden ? 'hidden' : 'text',
         <div class="{{key}}container"></div>
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#{{ key }}').colorpicker();
+                $('#{{ key }}').colorpicker().on('changeColor.colorpicker', function(event){
+                  $(this).val(event.color);
+                });
             })
         </script>
     </div>
