@@ -27,7 +27,7 @@ class Extension extends BaseExtension
     public function initialize() {
         if ($this->app['config']->getWhichEnd() == 'backend') {
             $this->addCSS('assets/css/bootstrap-colorpicker.min.css');
-            $this->addJavascript('assets/js/bootstrap-colorpicker.min.js', true);
+            $this->addJavascript('assets/js/bootstrap-colorpicker.min.js', array('late' => true));
         }
     }
 
