@@ -2,7 +2,8 @@
 
 {% set attr_opt = {
 class:              field.class|default(''),
-name_id:            key,
+id:                 key,
+name:               name,
 required:           field.required|default(false),
 readonly:           field.readonly|default(false),
 type:               field.hidden ? 'hidden' : 'text',
@@ -19,13 +20,13 @@ type:               field.hidden ? 'hidden' : 'text',
         <div>
             <label class="control-label">{{field.label|default(key)}}</label>
         </div>
-        <input {{ macro.attr(attr_opt) }} data-container=".{{key}}container" value="{{ context.content.get(key)|default('rgba(0,0,0,1)') }}" data-color="{{ context.content.get(key)|default('rgba(0,0,0,1)') }}"/>
+        <input {{ macro.attr(attr_opt) }} data-container=".{{key}}container" value="{{ context.content.get(contentkey)|default('rgba(0,0,0,1)') }}" data-color="{{ context.content.get(contentkey)|default('rgba(0,0,0,1)') }}"/>
         <div class="{{key}}container"></div>
         <script type="text/javascript">
             $(document).ready(function() {
                 $('#{{ key }}').colorpicker().on('changeColor.colorpicker', function(event){
                   $(this).val(event.color);
-                }).colorpicker('setValue', '{{ context.content.get(key)|default('rgba(0,0,0,1)') }}');
+                }).colorpicker('setValue', '{{ context.content.get(contentkey)|default('rgba(0,0,0,1)') }}');
             })
         </script>
     </div>
