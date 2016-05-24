@@ -1,9 +1,9 @@
 {
     "name": "boltabandoned/bootstrapcolorpicker",
-    "description": "A replacement for the colorpicker extension that no longer seems to work. Based on http://mjolnic.com/bootstrap-colorpicker/ and Raistlfiren/FAIconFieldType",
+    "description": "Another colorpicker extension. Based on http://mjolnic.com/bootstrap-colorpicker/ and Raistlfiren/FAIconFieldType",
     "type": "bolt-extension",
     "require": {
-        "bolt/bolt": ">=2.0.0,<3.0.0"
+        "bolt/bolt": "^3.0.0"
     },
     "keywords": [
       "field",
@@ -19,15 +19,12 @@
         }
     ],
     "autoload": {
-        "files": [
-            "init.php"
-        ],
         "psr-4": {
-            "Bolt\\Extension\\boltabandoned\\bootstrapcolorpicker\\": ""
+            "boltabandoned\\bootstrapcolorpicker\\": "src"
         }
     },
     "extra": {
-        "bolt-assets": "assets",
-        "bolt-icon": "assets/colorpicker-icon.png"
+        "bolt-class": "boltabandoned\\bootstrapcolorpicker\\BootstrapColorPickerFieldTypeExtension",
+        "bolt-assets": "web"
     }
 }

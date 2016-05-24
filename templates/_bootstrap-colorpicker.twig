@@ -2,8 +2,7 @@
 
 {% set attr_opt = {
 class:              field.class|default(''),
-id:                 key,
-name:               name,
+name_id:            key,
 required:           field.required|default(false),
 readonly:           field.readonly|default(false),
 type:               field.hidden ? 'hidden' : 'text',
@@ -20,14 +19,11 @@ type:               field.hidden ? 'hidden' : 'text',
         <div>
             <label class="control-label">{{field.label|default(key)}}</label>
         </div>
-        <div id="{{key}}wrapper" class="input-group {% if field.component %}colorpicker-component{% endif %}">
-            <input {{ macro.attr(attr_opt) }} data-container=".{{key}}container" value="{{ context.content.get(key)|default('rgba(0,0,0,1)') }}" data-color="{{ context.content.get(key)|default('rgba(0,0,0,1)') }}"/>
-            {% if field.component %}<span class="input-group-addon"><i></i></span>{% endif %}
-        </div>
+        <input {{ macro.attr(attr_opt) }} data-container=".{{key}}container" value="{{ context.content.get(key)|default('rgba(0,0,0,1)') }}" data-color="{{ context.content.get(key)|default('rgba(0,0,0,1)') }}"/>
         <div class="{{key}}container"></div>
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#{{ key }}wrapper').colorpicker().on('changeColor.colorpicker', function(event){
+                $('#{{ key }}').colorpicker().on('changeColor.colorpicker', function(event){
                   $(this).val(event.color);
                 }).colorpicker('setValue', '{{ context.content.get(key)|default('rgba(0,0,0,1)') }}');
             })

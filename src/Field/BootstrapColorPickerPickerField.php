@@ -1,10 +1,11 @@
 <?php
 
-namespace Bolt\Extension\boltabandoned\bootstrapcolorpicker;
+namespace boltabandoned\bootstrapcolorpicker\Field;
 
-use Bolt\Field\FieldInterface;
+use Bolt\Storage\Field\FieldInterface;
 
-class bootstrapcolorpicker implements FieldInterface {
+class BootstrapColorPickerPickerField implements FieldInterface
+{
 
     public function getName()
     {
@@ -23,7 +24,6 @@ class bootstrapcolorpicker implements FieldInterface {
 
     public function getStorageOptions()
     {
-        return array('default'=>'');
+        return ['default'=>''];
     }
-
 }
