@@ -25,6 +25,7 @@
     },
     "extra": {
         "bolt-class": "boltabandoned\\bootstrapcolorpicker\\BootstrapColorPickerFieldTypeExtension",
-        "bolt-assets": "web"
+        "bolt-assets": "web",
+        "bolt-icon": "web/colorpicker-icon.png"
     }
 }
