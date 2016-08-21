@@ -1,7 +1,7 @@
 {#=== Options ============================================================================#}
 
 {% set attr_opt = {
-class:              field.class|default(''),
+class:              'form-control '~field.class|default(''),
 name_id:            key,
 required:           field.required|default(false),
 readonly:           field.readonly|default(false),
@@ -14,16 +14,17 @@ type:               field.hidden ? 'hidden' : 'text',
 
 {#=== FIELDSET ============================================================================#}
 
-<fieldset class="bootstrap-colorpicker">
-    <div class="col-sm-12">
-        <div>
-            <label class="control-label">{{field.label|default(key)}}</label>
+<fieldset class="bootstrap-colorpicker form-group bolt-field-bootstrapcolorpicker">
+    <label class="main control-label col-xs-12" for="{{key}}">{{field.label|default(key)}}:</label>
+    <div class="col-xs-12">
+        <div id="{{key}}wrapper" class="input-group {% if field.component %}colorpicker-component{% endif %}">
+            <input {{ macro.attr(attr_opt) }} data-container=".{{key}}container" value="{{ context.content.get(key)|default('rgba(0,0,0,1)') }}" data-color="{{ context.content.get(key)|default('rgba(0,0,0,1)') }}"/>
+            {% if field.component %}<span class="input-group-addon"><i></i></span>{% endif %}
         </div>
-        <input {{ macro.attr(attr_opt) }} data-container=".{{key}}container" value="{{ context.content.get(key)|default('rgba(0,0,0,1)') }}" data-color="{{ context.content.get(key)|default('rgba(0,0,0,1)') }}"/>
         <div class="{{key}}container"></div>
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#{{ key }}').colorpicker().on('changeColor.colorpicker', function(event){
+                $('#{{ key }}{% if field.component %}wrapper{% endif %}').colorpicker().on('changeColor.colorpicker', function(event){
                   $(this).val(event.color);
                 }).colorpicker('setValue', '{{ context.content.get(key)|default('rgba(0,0,0,1)') }}');
             })
