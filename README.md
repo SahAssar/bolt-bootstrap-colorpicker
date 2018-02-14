@@ -13,8 +13,8 @@ Supported options:
     color:
         type: bootstrapcolorpicker
         component: true
-  	format: inline
- 	hidden: true
+        format: inline
+        hidden: true
         horizontal: true
         inline: true
         align: right
