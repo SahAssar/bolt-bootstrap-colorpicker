@@ -2,9 +2,9 @@
 
 namespace boltabandoned\bootstrapcolorpicker\Field;
 
-use Bolt\Storage\Field\FieldInterface;
+use Bolt\Storage\Field\Type\FieldTypeBase;
 
-class BootstrapColorPickerPickerField implements FieldInterface
+class BootstrapColorPickerPickerField extends FieldTypeBase
 {
 
     public function getName()
