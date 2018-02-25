@@ -1,5 +1,12 @@
 {#=== Options ============================================================================#}
 
+{% set field = {
+    hidden: false,
+    inline: false,
+    horizontal: true,
+    component: true
+} | merge(field) %}
+
 {% set attr_opt = {
 class:              'form-control '~field.class|default(''),
 name_id:            key,
