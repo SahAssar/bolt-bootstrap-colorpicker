@@ -24,6 +24,6 @@ class BootstrapColorPickerPickerField extends FieldTypeBase
 
     public function getStorageOptions()
     {
-        return ['default'=>null];
+        return ['default' => ''];
     }
 }
